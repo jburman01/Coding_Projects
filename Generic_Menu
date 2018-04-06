@@ -1,0 +1,188 @@
+# * * * * * * * * * * * * * * * * * * * * * * * 
+#
+# This menu was created by (username) for use by
+# (position placeholder) to make it easier to use 
+# a variety of services used by (group).
+#
+# This script is open source so feel free to edit
+# to make improvements.
+#
+# Author: Jason Burman
+# Purpose: A script for connecting to numerous
+#          (company) services for use by anyone 
+#          who needs terminal access.
+# * * * * * * * * * * * * * * * * * * * * * * *
+
+while :
+  do
+  clear
+cat << "EOF"
+ _____                       _                _   __  __                     
+|_   _| __  _ __  _ __ ___  (_) _ __    __ _ | | |  \/  |  ___  _ __   _   _ 
+  | | / _ \| '__|| '_ ` _ \ | || '_ \  / _` || | | |\/| | / _ \| '_ \ | | | |
+  | ||  __/| |   | | | | | || || | | || (_| || | | |  | ||  __/| | | || |_| |
+  |_| \___||_|   |_| |_| |_||_||_| |_| \__,_||_| |_|  |_| \___||_| |_| \__,_|
+                                                                             
+EOF
+  echo "1) service1"
+  echo "2) service2"
+  echo "3) service3"
+  echo "4) service4"
+  echo "5) Connect to Serial"
+  echo "6) service5"
+  echo "7) Edit this Menu"
+  echo ""
+  echo "To escape this menu use ctrl-c"
+  echo "Enter B to go back to the main menu"
+  echo "---------------------------------------"
+  echo -n "Please make a Selection: "
+  read yourch
+  case $yourch in
+   
+    # Site Menu
+    1) while :
+         do
+cat << "EOF"
+
+(paste Graphic here)
+
+EOF
+         echo "1) "
+         echo "2) "
+         echo "3) "
+         echo "4) "
+         echo "5) "
+         echo "6) "
+         echo "7) "
+         echo "8) "
+         echo "---------------------------------------"
+         echo "Enter B to go back to the main menu"
+         echo "Please make a Selection: "
+         read site
+         case $site in
+             # b or B for BACK
+                b) source ~/.bashrc ;;
+                B) source ~/.bashrc ;;
+                # (site) Console Access
+                1) ssh (host) ;;
+                2) ssh  ;;
+                3) ssh  ;;
+                4) ssh  ;;
+                5) ssh  ;;
+                6) ssh  ;;
+                7) ssh  ;;
+                8) ssh  ;;
+         esac
+         source ~/.bashrc
+     done ;;    
+     
+     
+     # site Menu
+    2) while :
+         do
+cat << "EOF"
+
+EOF
+         echo "1) "
+         echo "2) "
+         echo "3) "
+         echo "4) "
+         echo "5) "
+         echo "6) "
+         echo "7) "
+         echo "8) "
+         echo "---------------------------------------"
+         echo "Enter B to go back to the main menu"
+         echo "Please make a Selection: "
+         read pdx2menu
+         case $pdx2menu in
+             # b or B for BACK
+                b) source ~/.bashrc ;;
+                B) source ~/.bashrc ;;
+                # accesses
+                1) ssh  ;;
+                2) ssh  ;;
+                3) ssh  ;;
+                4) ssh  ;;
+                5) ssh  ;;
+                6) ssh  ;;
+                7) ssh  ;;
+                8) ssh  ;;
+         esac
+         source ~/.bashrc
+     done ;;
+     
+     # Menu
+    3) while :
+         do
+cat << "EOF"
+
+
+EOF
+         echo "1) "
+         echo "2) "
+         echo "3) "
+         echo "4) "
+         echo "5) "
+         echo "6) "
+         echo "7) "
+         echo "8) "
+         echo "---------------------------------------"
+         echo "Enter B to go back to the main menu"
+         echo "Please make a Selection: "
+         read 
+         case $ in
+             # b or B for BACK
+                b) source ~/.bashrc ;;
+                B) source ~/.bashrc ;;
+                # PDX1 accesses
+                1) ssh  ;;
+                2) ssh  ;;
+                3) ssh  ;;
+                4) ssh  ;;
+                5) ssh  ;;
+                6) ssh  ;;
+                7) ssh  ;;
+                8) ssh  ;;
+         esac
+         source ~/.bashrc
+     done ;;
+     
+     # NETENG BASTION LIST
+    4) while :
+         do
+cat << "EOF"
+
+
+EOF
+         echo "1) "
+         echo "2) "
+         echo "---------------------------------------"
+         echo "Enter B to go back to the main menu"
+         echo "Please make a Selection"
+         read 
+         case $ in
+             # b or B for BACK   
+                1) ssh ;;
+                2) ssh ;;
+            esac
+            source ~/.bashrc
+        done ;;
+       
+     # CONNECT TO SERIAL
+    5) screen /dev/tty.usb*-* ;;
+    
+     # Yubikey Renew
+    6) echo "Initializing Yubikey Daily Renew"
+            mwinit
+            ssh-add
+            rm .ssh/known_hosts
+            echo "Yubikey Daily Renew Complete! Press any key to continue..." ; read -n 1 ;;
+  
+     # Edit menu
+    7) vim ~/.bashrc ;;
+
+    *) source ~/.bashrc ;;
+
+  esac
+done
