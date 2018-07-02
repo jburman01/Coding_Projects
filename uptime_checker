@@ -1,0 +1,12 @@
+#!/bin/bash 
+######################################################### 
+# Script name: uptime checker                           #                                                            
+# Description: to query uptime, hostname and IP         #
+#              address of remote hosts.                 #                                                               
+# Author: Jason Burman                                  #                                                                  
+# Email: Jason.a.burman@gmail.com                       #                                                                   
+#                                                       #
+######################################################### 
+echo "hostname:" $(hostname)
+echo "IP:" $(hostname -I)
+echo "uptime" $(uptime)
