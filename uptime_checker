@@ -16,8 +16,5 @@ cat << "EOF"
 |______/  |   __/|__| |__|__|_|  /\___  >  \______  /___|  /\___  >\___  >__|_ \\___  >__|   
           |__|                 \/     \/          \/     \/     \/     \/     \/    \/       
 ---------------------------------------------------------------------------------------------
-EOF
-echo""
-echo "hostname:" $(hostname)
-echo "IP:" $(hostname -I)
-echo "uptime" $(uptime)
+for i in $(cat uptime_hosts); do ssh root@$i 'echo $HOSTNAME; hostname -I; uptime';done
+
