@@ -1,0 +1,23 @@
+#!/bin/bash
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Author: Jason Burman                                            #
+# Script: host_uptime.sh                                          #
+# Description: The purpose of this script is to login to hosts to #
+#              check device uptime, hostname, ip address.         #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+hosts=~/uptime_hosts
+username=root
+
+for hosts in $(cat ~/uptime_hosts) ; do
+ hostname=$(ssh "${username}@${hosts}" hostname)
+ ip_addr=$(ssh "${username}@${hosts}" hostname -I)
+ uptime=$(ssh "${username}@${hosts}" uptime)
+ echo
+ {
+    echo "* Hostname:?$hostname"
+    echo "* IP:?$ip_addr"
+    echo "* uptime:?$uptime"
+ } | column -s\? -t
+ echo
+done <"$hosts"
